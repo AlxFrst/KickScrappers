@@ -12,8 +12,8 @@ const KlektInfo = (sku) => {
       const $ = cheerio.load(response.data);
       const sneakerTitle = $(".u-title.u-margin-none").text();
       const sizeArray = $(".pdp-price-point-wrapper").each((i, el) => {
-        const klektsize = $(el).find(".pdp-price-point-size").text();
-        const kelktprice = $(el).find(".pdp-price-point-price").text();
+        const klektsize = $(el).find(".pdp-price-point-size").text().replace("US", "").trim();
+        const kelktprice = $(el).find(".pdp-price-point-price").text().replace("€", "").replace(" ", "");
         sizes.push({ klektsize, kelktprice });
       });
       console.log(sizes);

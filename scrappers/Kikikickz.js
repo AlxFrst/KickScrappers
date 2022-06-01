@@ -12,8 +12,8 @@ const KikikickzInfo = (sku) => {
       const $ = cheerio.load(response.data);
       const sizeArray = $(".select__custom--value.body--text").each((i, el) => {
         const element = $(el).text();
-        const kikikickzsize = element.split("-")[1];
-        const kikikickzprice = element.split("-")[2];
+        const kikikickzsize = element.split("-")[1].replace(" US", "").trim();
+        const kikikickzprice = element.split("-")[2].replace("€", "").replace(" ", "");
         sizes.push({ kikikickzsize, kikikickzprice });
       });
       console.log(sizes);
