@@ -12,7 +12,6 @@ To use, simply require the library and invoke the appropriate scraper function w
 
 in Index.js simply "stockxInfo(SKU)"
 
-scraper.nike('http://www.nike.com/us/en_us/pd/air-jordan-11-low-mens-shoe/pid-11031651/pgid-11351735');
 
 The scraper function will return a promise that resolves to an object containing the parsed data.
 
